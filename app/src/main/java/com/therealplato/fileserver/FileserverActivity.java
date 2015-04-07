@@ -1,12 +1,19 @@
 package com.therealplato.fileserver;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.io.File;
 
 
 public class FileserverActivity extends ActionBarActivity {
@@ -19,11 +26,12 @@ public class FileserverActivity extends ActionBarActivity {
 
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
+        EditText editText = (EditText) findViewById(R.id.root_folder);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
 
     public void startServer(View view) {
         Intent intent = new Intent(this, AndroidWebServerActivity.class);

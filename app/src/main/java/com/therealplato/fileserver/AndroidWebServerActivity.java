@@ -3,6 +3,7 @@
 
 package com.therealplato.fileserver;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -11,8 +12,13 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import fi.iki.elonen.NanoHTTPD;
@@ -28,6 +34,21 @@ public class AndroidWebServerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_web_server);
         hello = (TextView) findViewById(R.id.hello);
+        listFiles();
+
+    }
+
+
+    public void listFiles(){
+        //EditText editText = (EditText) findViewById(R.id.root_folder);
+        //String path = editText.getText().toString();
+        //Uri selectedUri = Uri.parse(+"");
+        File root = Environment.getExternalStorageDirectory();
+        String[] filenames = root.list();
+        Log.i("FileserverActivity", "First file: " + filenames[0]);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, filenames);
+        ListView listView = (ListView) findViewById(R.id.filenameslist);
+        listView.setAdapter(adapter);
     }
 
     @Override

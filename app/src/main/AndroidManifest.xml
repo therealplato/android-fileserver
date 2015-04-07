@@ -30,7 +30,11 @@
         </activity>
         <activity
             android:name=".AndroidWebServerActivity"
-            android:label="@string/title_activity_android_web_server" >
+            android:label="@string/title_activity_android_web_server"
+            android:parentActivityName=".FileserverActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.therealplato.fileserver.FileserverActivity" />
         </activity>
     </application>
 
