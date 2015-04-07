@@ -25,6 +25,11 @@ public class FileserverActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void startServer(View view) {
+        Intent intent = new Intent(this, AndroidWebServerActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

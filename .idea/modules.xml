@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Fileserver.iml" filepath="$PROJECT_DIR$/Fileserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libs/nanohttpd/nanohttpd.iml" filepath="$PROJECT_DIR$/libs/nanohttpd/nanohttpd.iml" />
     </modules>
   </component>
 </project>
